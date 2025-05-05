@@ -26,7 +26,7 @@ These parameters may be chosen by modifying 'N_choice', 'alpha_choice','beta_cho
 
 For each parameter choice running the full notebook will generate and store the data.
 
-Plotting of the figures can be accomplished then running the notebook 'Analysis_file.ipynb' after all the data has been generated and stored.
+Plotting of the figures can be accomplished when running the notebook 'Analysis_file.ipynb' after all the data has been generated and stored.
 
 
 
