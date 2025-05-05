@@ -38,5 +38,6 @@ Plotting of the figures can be accomplished then running the notebook 'Analysis_
 
 
 [1]: Konopik, M., Leyendecker, S., Maslovskaya, S., Ober-Blöbaum, S., and Sato Martin de Almagro, R. T.  A new Lagrangian approach to optimal control of second-order systems. 2025. arXiv: 2503.04466 [math.OC].
+
 [2] Konopik, M., Leyendecker, S., Maslovskaya, S., Ober-Blöbaum, S., and Sato Martin de Almagro, R. T. On the variational discretization of optimal control problems for Lagrangian dynamics. 2025. ResearchSquare:  https://doi.org/10.21203/rs.3.rs-6566751/v1
 
