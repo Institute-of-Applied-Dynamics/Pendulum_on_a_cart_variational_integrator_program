@@ -8,7 +8,7 @@ The OCP is solved using a new Lagrangian approach defined in [1], using a low or
 
 The code allows to generate solutions for two specific choices of the OCP in the form of a pendulum inversion and a cart translation, using the jupyter notebook 'syimpy_implementation_paper_simu.ipynb'
 
-The notebook 'Analysisi_file.ipynb' contains the generation of the figures for paper [2] from the data created.
+The notebook 'Analysis_file.ipynb' contains the generation of the figures for paper [2] from the data created.
 
 For the figures, 'syimpy_implementation_paper_simu.ipynb' needs to be used to create the following data:
  - Pendulum inversion
