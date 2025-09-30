@@ -10,3 +10,4 @@ test_minimization.ipynb
 nmf.ipynb
 *.m
 *.pdf
+*.pkl
