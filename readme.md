@@ -5,7 +5,7 @@ The provided code simulates the pendulum on a cart optimal control problem (OCP)
 
 The OCP is solved using a new Lagrangian approach defined in [1], using a low order family of numerical integrators [2].
 
-## Fig. 2
+## Fig. 2 plot
 The code allows to generate solutions for two specific choices of the OCP in the form of a pendulum inversion and a cart translation, using the jupyter notebook 'syimpy_implementation_paper_simu.ipynb'
 
 The notebook 'Analysis_file.ipynb' contains the generation of the figures for paper [2] from the data created.
