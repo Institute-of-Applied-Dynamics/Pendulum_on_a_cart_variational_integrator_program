@@ -1,5 +1,4 @@
 *.pyc
-/data
 /jaxopt-main
 /figs
 /figs_tests
@@ -9,3 +8,5 @@ jax_opt_test.ipynb
 simulation.ipynb
 test_minimization.ipynb
 nmf.ipynb
+*.m
+*.pdf
