@@ -38,6 +38,8 @@ The program 'direct_controlled_Lagrangian.ipynb; needs to be used, with the choi
 
 And the N values [50,100,150,200,250,300,350]
 
+Further, either the given indirect solution can be used as is, or generated using 'Reference.ipynb', which can be executed using the Julia kernel.
+
 After running the code for each choice, the file 'plotting_data_pendulum.ipynb' generates the fig.4
 
 ## Fig. 4 plot
