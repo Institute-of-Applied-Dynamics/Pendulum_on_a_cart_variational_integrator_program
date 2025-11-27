@@ -325,7 +325,7 @@ class Direct_continuous_generator_forced_L:
         v_xi_calc_terms = v_xi_calc_terms.subs([[tmp1,tmp2] for tmp1,tmp2 in zip(xi_vars,xi_from_lambda)])
         v_xi_calc_terms = v_xi_calc_terms.subs([[tmp1,tmp2] for tmp1,tmp2 in zip(self.u,u)])
         lamq = sympy.solve(v_xi_calc_terms - sympy.Matrix(vxi), self.lamq)
-        lamq_vec = np.array([lamq[tmp] for tmp in self.lamq])
+        lamq_vec = sympy.Matrix([lamq[tmp] for tmp in self.lamq])
         return lamq_vec
 
     def calc_v_xi_from_standard_variables(self):
@@ -497,10 +497,10 @@ class discrete_standard_direct_eq_generator_forced_L:
         discrete_objective_function += self.mu.transpose()@initial_constraints[0]    
         discrete_objective_function += self.nu.transpose()@initial_constraints[1]    
         #q equations
-        for tmp1, tmp2 in zip(state_equations[0],self.all_d[2]):
+        for tmp1, tmp2 in zip(state_equations[0],self.all_d[2][1:]):
             discrete_objective_function += tmp2.transpose()@ tmp1
         #vq equations    
-        for tmp1, tmp2 in zip(state_equations[1],self.all_d[3]):
+        for tmp1, tmp2 in zip(state_equations[1],self.all_d[3][1:]):
             discrete_objective_function += tmp2.transpose()@ tmp1
 
         opt_variables = []+list(self.mu)
@@ -776,6 +776,7 @@ class Direct_continuous_generator_forced_L_double_pendulum:
         # self.new_control_H_func = self.new_control_H()
         self.parameters["dim_q"] = len(self.q) 
         self.parameters["dim_u"] = len(self.u)
+        
         self.control_L = self.control_lagrangian(self.q,self.lamq,self.vq,self.vlam,self.u,self.parameters)
         self.u_eval_from_new_velocity()
         # if I_func is not None:
@@ -1009,6 +1010,8 @@ class discrete_standard_direct_eq_generator_forced_L_double_pendulum:
         self.all_vars_new_approach =  [self.cont_equations.q,self.cont_equations.vq,self.cont_equations.lamq,self.cont_equations.vlam,self.cont_equations.u]
         # self.k_eqs_description_q= eq_discretizer_midpoint(self.cont_equations.state_right_hand_side()[0],self.all_vars,0,self.cont_equations.parameters)
         # self.k_eqs_description_vq= eq_discretizer_midpoint(self.cont_equations.state_right_hand_side()[1],self.all_vars,1,self.cont_equations.parameters)
+        self.k_eqs_description_q= eq_discretizer_midpoint(self.cont_equations.state_right_hand_side()[0],self.all_vars,0,self.cont_equations.parameters)
+        self.k_eqs_description_vq= eq_discretizer_midpoint(self.cont_equations.state_right_hand_side()[1],self.all_vars,1,self.cont_equations.parameters)
         self.control_L_k = discrete_control_Lagrangian(self.cont_equations.control_lagrangian,self.all_vars_new_approach,self.cont_equations.parameters)
         q_d,vq_d,lamq_d,lamv_d,U_d,U1_d,U2_d = [],[],[],[],[],[],[]
         for i in range(self.N+1):
